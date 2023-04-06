@@ -1,29 +1,52 @@
-import React from 'react'
-import Header from './Components/Header'
-import About from './Components/About'
-import Portfolio from './Components/Portfolio'
-import Contact from './Components/Contact'
+import React, { useState, useEffect, useRef } from 'react';
+import Header from './Components/Header';
+import About from './Components/About';
+import Portfolio from './Components/Portfolio';
+import { useInView } from 'react-intersection-observer';
 
+const TriggerComponent = ({ onInView }) => {
+  const { ref, inView } = useInView({ threshold: 0 });
 
+  useEffect(() => {
+    if (inView) {
+      onInView();
+    }
+  }, [inView, onInView]);
 
-
-function App() {
-
-  const [selectedComponent, setSelectedComponent] = React.useState(<About />);
-
-  const handleHeaderItemClick = (component) => {
-    setSelectedComponent(component);
-    console.log("Clicked on component:", component);
-  };
-  
   return (
-    <div className="App">
-      <div className="header">
-        <Header onHeaderItemClick={handleHeaderItemClick} />
-        </div>
-    <div className="selected--component">{selectedComponent}</div>
-    </div>
-  )
-}
+    <div ref={ref}></div>
+  );
+};
 
-export default App
+const App = () => {
+  const [showPortfolio, setShowPortfolio] = useState(false);
+  const portfolioRef = useRef(null);
+
+  const scrollToPortfolio = () => { 
+    if (!showPortfolio) {
+      setShowPortfolio(true);
+    }
+
+    if (portfolioRef.current) {
+      const headerHeight = 150; 
+      const yOffset = -headerHeight;
+      const y = portfolioRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  const handleTriggerInView = () => {
+    setShowPortfolio(true);
+  };
+
+  return (
+    <div>
+      <Header onPortfolioButtonClick={scrollToPortfolio} />
+      <About />
+      {showPortfolio && <Portfolio ref={portfolioRef} />}
+      <TriggerComponent onInView={handleTriggerInView} />
+    </div>
+  );
+};
+
+export default App;

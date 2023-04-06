@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Portfolio() {
+const Portfolio = React.forwardRef((props, ref) => {
   return (
-    <div className="portfolio--container">
-      <div className="white--wrap">
+    <div className="portfolio--container" ref ={ref}>
+            <div className="white--wrap">
       <h1>EVOLVING SHIPS</h1>
       <p>This is the project that taught me how to code. I saw that natural selection could be simulated in code, and importantly I saw just how simple the fundamental idea was. I knew I could do it, and even though I didn't even know what a variable or a function was, I resolved to code natural selection on my own.</p>
       <p>This project was made in p5js, which is a simple physics library for Javascript. Each ship has genes corresponding to a grid on the canvas. For each grid location, a ship has 20 genes which contain random combinations of thrust and turn directions. A ship can turn left right, or not at all; and it can thrust forward, backward, or not at all. When a ship hits a wall, it loses half of its "life," and when its life reaches zero, it explodes. The ships track their lifespans, and when all ships in a population have exploded, a new population is formed by crossing over the genes of the ships with the longest lifespans. A random chance of mutation is also possible. Child ships mix colors from their parents, while mutated ships take on a new random color so that mutations are easily visible.</p>
@@ -23,6 +23,7 @@ export default function Portfolio() {
 <p>This site was made with React. It uses a database for the portfolio and the store. I found this important so that I can easily just type some information into the database and throw the .png file into the images folder when I finish a new cover. The site then renders in the new cover onto a card prop.</p>
 <p>React was a total game-changer for me. Prior to learning it, using HTML and having separate .js files felt so patchwork. The way that React makes everything feel more like Javascript feels very natural to me.</p>
 </div>
-
   )
-}
+})
+
+export default Portfolio;

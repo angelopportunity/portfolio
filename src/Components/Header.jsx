@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Portfolio from './Portfolio'
 import About from './About'
 
-export default function Header(props) {
+export default function Header({onPortfolioButtonClick}) {
   const [clickedLinks, setClickedLinks] = useState({});
   const [isSticky, setIsSticky] = useState(false);
 
@@ -21,34 +21,6 @@ export default function Header(props) {
     };
   }, []);
 
-  const handleItemClick = (component, link) => {
-    props.onHeaderItemClick(component, link);
-    // Reset all clickedLinks state properties to false
-    setClickedLinks((prevState) => ({
-      ...prevState,
-      about: false,
-      portfolio: false,
-      contact: false,
-    }));
-    // Set the clicked item's clickedLinks state property to true
-    if (link === 'about') {
-      setClickedLinks((prevState) => ({
-        ...prevState,
-        about: true,
-      }));
-    } else if (link === 'portfolio') {
-      setClickedLinks((prevState) => ({
-        ...prevState,
-        portfolio: true,
-      }));
-    } else if (link === 'contact') {
-      setClickedLinks((prevState) => ({
-        ...prevState,
-        contact: true,
-      }));
-    }
-  };
-
   const headerClasses = isSticky ? 'header sticky' : 'header';
 
   return (
@@ -64,21 +36,19 @@ export default function Header(props) {
 
       <div className="header--text--container">
   <div
-    onClick={() => handleItemClick(<About />, 'about')}
     className={`header--link ${clickedLinks['about'] ? 'clicked' : ''}`}
   >
     <div>ABOUT</div>
   </div>
 
   <div
-    onClick={() => handleItemClick(<Portfolio />, 'portfolio')}
+    onClick={onPortfolioButtonClick}
     className={`header--link ${clickedLinks['portfolio'] ? 'clicked' : ''}`}
   >
     <div>PORTFOLIO</div>
   </div>
 
   <div
-    onClick={() => handleItemClick(<Contact />, 'contact')}
     className={`header--link ${clickedLinks['contact'] ? 'clicked' : ''}`}
   >
     <div>CONTACT</div>
