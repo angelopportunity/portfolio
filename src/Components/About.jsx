@@ -11,7 +11,7 @@ export default function About() {
                     <button className="about--button">CONTACT ME</button>
                 </div>
                 <div className="about--image--container">
-                    <img className="pixelart" src="%PUBLIC_URL%/pixelart.png" alt="Pixel Art"></img>
+                    <img className="pixelart" src="pixelart.png" alt="Pixel Art"></img>
                     <p>I also do pixel art.</p>
                 </div>
             </div>
