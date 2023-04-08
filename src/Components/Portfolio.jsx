@@ -49,8 +49,8 @@ const Portfolio = React.forwardRef((props, ref) => {
 <div className="card--flexbox">
       <div className="sketch--container--tan">
       <h3>React, CSS, HTML, Design</h3>
-<iframe className="iframe" src="https://editor.p5js.org/angelopportunity/full/8BwQvne6W" scrolling="no" height="450"width="710" frameBorder="0">
-</iframe>
+      <a href="https://darkstardesign.netlify.app/" target="_blank" rel="noopener noreferrer">
+<img className="screenshot" src="coverstore.png"></img></a>
 <div className="card--copy">
 <p>This site was made with React. It uses a database for the portfolio and the store. I found this important so that I can easily just type some information into the database and throw the .png file into the images folder when I finish a new cover. The site then renders in the new cover onto a card prop.</p>
 </div>

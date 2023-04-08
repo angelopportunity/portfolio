@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Header from './Components/Header';
 import About from './Components/About';
 import Portfolio from './Components/Portfolio';
+import Footer from './Components/Footer'
 import { useInView } from 'react-intersection-observer';
 
 const TriggerComponent = ({ onInView }) => {
@@ -45,6 +46,7 @@ const App = () => {
       <About />
       {showPortfolio && <Portfolio ref={portfolioRef} />}
       <TriggerComponent onInView={handleTriggerInView} />
+      <Footer />
     </div>
   );
 };
