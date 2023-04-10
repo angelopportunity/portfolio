@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Portfolio from './Portfolio'
 import About from './About'
 
-export default function Header({onPortfolioButtonClick}) {
+export default function Header({onPortfolioButtonClick, onContactButtonClick, onAboutButtonClick}) {
   const [clickedLinks, setClickedLinks] = useState({});
   const [isSticky, setIsSticky] = useState(false);
 
@@ -36,6 +36,7 @@ export default function Header({onPortfolioButtonClick}) {
 
       <div className="header--text--container">
   <div
+  onClick={onAboutButtonClick}
     className={`header--link ${clickedLinks['about'] ? 'clicked' : ''}`}
   >
     <div>ABOUT</div>
@@ -49,6 +50,7 @@ export default function Header({onPortfolioButtonClick}) {
   </div>
 
   <div
+  onClick={onContactButtonClick}
     className={`header--link ${clickedLinks['contact'] ? 'clicked' : ''}`}
   >
     <div>CONTACT</div>

@@ -27,6 +27,8 @@ const App = () => {
   const [showContact, setShowContact] = useState(false);
   const contactRef = useRef(null);
 
+  const aboutRef = useRef(null);
+
   const scrollTo = (ref, setShowState) => {
     if (!ref.current) {
       setShowState(true);
@@ -42,6 +44,7 @@ const App = () => {
 
   const scrollToPortfolio = () => scrollTo(portfolioRef, setShowPortfolio);
   const scrollToContact = () => scrollTo(contactRef, setShowContact);
+  const scrollToAbout = () => scrollTo(aboutRef)
 
   const handleTriggerInView = (setShowState) => {
     setShowState(true);
@@ -49,8 +52,8 @@ const App = () => {
 
   return (
     <div>
-      <Header onPortfolioButtonClick={scrollToPortfolio} onContactButtonClick={scrollToContact} />
-      <About />
+      <Header onPortfolioButtonClick={scrollToPortfolio} onContactButtonClick={scrollToContact} onAboutButtonClick={scrollToAbout} />
+      <About ref={aboutRef} />
       {showPortfolio && <Portfolio ref={portfolioRef} />}
       <TriggerComponent onInView={() => handleTriggerInView(setShowPortfolio)} />
       {showContact && <Contact ref={contactRef} />}

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function About() {
+const About = React.forwardRef((props, ref) => {
     return (
-        <div className="about--main">
+        <div className="about--main" ref={ref}>
             <div className="about">
                 <div className="about--container">
                     Hey! My name is 
@@ -26,4 +26,6 @@ export default function About() {
             </div>
     )
 
-}
+});
+
+export default About;
