@@ -7,9 +7,11 @@ const Portfolio = React.forwardRef((props, ref) => {
       <div className="portfolio--content">
       <h1>MY PORTFOLIO</h1>
       <div className="portfolio--card">
+      <p className="card--toptext">JAVASCRIPT, P5JS, SIMULATED EVOLUTION</p>
       <div className="card--flexbox">
+
       <div className="sketch--container">
-      <h3>Javascript, P5JS, Simulated Evolution</h3>
+
 <iframe className="iframe" src="https://editor.p5js.org/angelopportunity/full/8BwQvne6W" scrolling="no" height="450"width="710" frameBorder="0">
 </iframe>
 <div className="card--copy">
@@ -28,7 +30,7 @@ const Portfolio = React.forwardRef((props, ref) => {
 </div>
 </div>
 
-
+<p className="card--toptext--right">LUA, LOVE2D, GAMEDEV</p>
 <div className="card--flexbox">
   <div className="card--copy">
 <h2>Coding Tutorials</h2>
@@ -37,7 +39,7 @@ const Portfolio = React.forwardRef((props, ref) => {
 </div>
 </div>
 <div className="sketch--container--pink">
-<h3>Lua, Love2D, Gamedev</h3>
+
 <iframe className="iframe" width="560" height="315" src="https://www.youtube.com/embed/aho63tCS8KI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div className="card--copy">
 <p>This three-part tutorial series is what I wish I would have had when I had first started learning. I approach the concept of variables, functions, etc. with the idea that the viewer has zero experience at all. When I first started learning, most tutorials would make incorrect assumptions about what I knew or what was intuitive to a beginner.</p>
@@ -45,10 +47,10 @@ const Portfolio = React.forwardRef((props, ref) => {
 </div>
 </div>
 
-
+<p className="card--toptext">REACT, CSS, HTML, DESIGN</p>
 <div className="card--flexbox">
       <div className="sketch--container--tan">
-      <h3>React, CSS, HTML, Design</h3>
+
       <a href="https://darkstardesign.netlify.app/" target="_blank" rel="noopener noreferrer">
 <img className="screenshot" src="coverstore.png"></img></a>
 <div className="card--copy">

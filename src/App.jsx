@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Header from './Components/Header';
 import About from './Components/About';
 import Portfolio from './Components/Portfolio';
-import Footer from './Components/Footer'
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 import { useInView } from 'react-intersection-observer';
 
 const TriggerComponent = ({ onInView }) => {
@@ -23,29 +24,37 @@ const App = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
   const portfolioRef = useRef(null);
 
-  const scrollToPortfolio = () => { 
-    if (!showPortfolio) {
-      setShowPortfolio(true);
+  const [showContact, setShowContact] = useState(false);
+  const contactRef = useRef(null);
+
+  const scrollTo = (ref, setShowState) => {
+    if (!ref.current) {
+      setShowState(true);
     }
 
-    if (portfolioRef.current) {
-      const headerHeight = 150; 
+    if (ref.current) {
+      const headerHeight = 150;
       const yOffset = -headerHeight;
-      const y = portfolioRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
-  const handleTriggerInView = () => {
-    setShowPortfolio(true);
+  const scrollToPortfolio = () => scrollTo(portfolioRef, setShowPortfolio);
+  const scrollToContact = () => scrollTo(contactRef, setShowContact);
+
+  const handleTriggerInView = (setShowState) => {
+    setShowState(true);
   };
 
   return (
     <div>
-      <Header onPortfolioButtonClick={scrollToPortfolio} />
+      <Header onPortfolioButtonClick={scrollToPortfolio} onContactButtonClick={scrollToContact} />
       <About />
       {showPortfolio && <Portfolio ref={portfolioRef} />}
-      <TriggerComponent onInView={handleTriggerInView} />
+      <TriggerComponent onInView={() => handleTriggerInView(setShowPortfolio)} />
+      {showContact && <Contact ref={contactRef} />}
+      <TriggerComponent onInView={() => handleTriggerInView(setShowContact)} />
       <Footer />
     </div>
   );

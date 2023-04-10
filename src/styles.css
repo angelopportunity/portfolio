@@ -74,11 +74,10 @@
     left: 0;
     right: 0;
     background-color: white;
-    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
   
   .header--link {
-    border-bottom: 0.0625em solid transparent;
     display: inline-block;
     white-space: nowrap;
     text-align: center;
@@ -89,6 +88,8 @@
   
   .header--link:hover div {
     border-bottom: 0.0625em solid var(--main-border-color);
+
+    
 
 
   }
@@ -214,6 +215,7 @@ text-align: justify;
   }
 
 .iframe {
+padding-top: 1em;
 margin-top: -10em;
 transform: scale(0.5);
 margin-left: -30em;
@@ -223,13 +225,14 @@ margin-bottom: -10em;
 
 
 .portfolio--container {
+  padding-bottom: 4em;
 
 }
 
 .sketch--container {
 overflow: hidden;
 margin-top: 1.5625em;
-box-shadow: .6em .6em .6em rgb(0 0 0 / 0.3);
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .p {
@@ -301,7 +304,8 @@ text-align: justify;
     left: 0;
     right: 0;
     background-color: white;
-    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.3);
+   
   }
   
   .header--link {
@@ -311,18 +315,17 @@ text-align: justify;
     font-size: 1.2em;
     transition: font-size 0.25s ease-in-out; 
     padding: 2.8em;
-    border-bottom: 0.0625em solid transparent;
   }
   
   .header--link:hover div {
-    border-bottom: 0.0625em solid var(--main-border-color);
+    border-bottom: 0.0625em solid #d4bdea;
 
 
   }
 
   .header--link.clicked div {
 
-   border-bottom: rgb(206, 138, 199) solid 0.0825em;
+   border-bottom: 0.0625em solid #d4bdea;
   }
   
   /* header logo */ 
@@ -434,7 +437,7 @@ text-align: justify;
 .iframe {
     transform: scale(1);
     margin-left: 4.5em;
-    margin-top: 1em;
+    margin-top: .05em;
     margin-bottom: 0;
     height: 20.1em;
     width: 30.6em;
@@ -482,9 +485,21 @@ h2 {
     border-radius: 5px 5px 5px 5px;
 }
 
+.card--toptext {
+  margin-block-end: .2em;
+  text-align: center;
+  margin-right: 40%;
+}
+
+.card--toptext--right {
+  margin-block-end: .2em;
+  text-align: center;
+  margin-left: 40%;
+}
+
 
 .card--flexbox {
-    margin-top: 3.5em;
+    margin-bottom: 3.5em;
     display: flex;
     flex-direction: row;
   }
@@ -499,7 +514,7 @@ flex: 0 0 60%;
 background-color: var(--main-background-color);
 
 border-radius: 5px 5px 5px 5px;
-box-shadow: .1em .6em .6em .6em rgb(0 0 0 / 0.2);
+box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 
 }
 
@@ -511,7 +526,7 @@ box-shadow: .1em .6em .6em .6em rgb(0 0 0 / 0.2);
     background-color: #d4bdea;
     
     border-radius: 5px 5px 5px 5px;
-    box-shadow: .1em .6em .6em .6em rgb(0 0 0 / 0.2);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     
     }
 
@@ -522,7 +537,7 @@ box-shadow: .1em .6em .6em .6em rgb(0 0 0 / 0.2);
     flex: 0 0 60%;
     background-color: #ead4bd;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: .1em .6em .6em .6em rgb(0 0 0 / 0.2);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -531,6 +546,7 @@ box-shadow: .1em .6em .6em .6em rgb(0 0 0 / 0.2);
 
 .screenshot {
   max-width: 40em;
+  padding-top: 1em;
 
 }
     
@@ -577,4 +593,72 @@ justify-content: center;
   padding-right: 1em;
 }
 
+}
+
+/* CONTACT */
+
+.contactform {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contactform--container {
+padding-top: 2em;
+background-color: var(--main-background-color);
+
+}
+
+.contact--label--wrapper {
+  margin-right: .5em;
+}
+
+.contact--label > input,
+.contact--label > textarea {
+  flex: 1;
+  padding: .5em;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 1em;
+
+}
+
+.contact--label > textarea {
+  margin-top: 2em;
+  height: 5em;
+  width: 30em;
+
+}
+
+.contact--submitbutton {
+  max-width: 10em;
+  height: 2.5em;
+  margin-bottom: 2em;
+  color: var(--main-border-color);
+  margin-top: 1.625em;
+  font-family: 'Maison Neue', sans-serif;
+  background-color: transparent;
+  border: 0.08em solid black;
+}
+
+.contact--textarea--label--wrapper {
+  width: 30em;
+  height: 10em;
+  text-align: justify;
+}
+
+.contact--textarea {
+  margin-top: 1em;
+  height: 15em;
+  width: 40em;
+}
+
+.contact--flex--wrapper {
+  padding-bottom: 1.5em;
+}
+
+.h1--center {
+  text-align: center;
 }
