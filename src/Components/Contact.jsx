@@ -9,9 +9,11 @@ const Contact = React.forwardRef((props, ref) => {
     const handleSubmit = (event) => {
         alert('Thank You! I will get back to you as soon as possible.')
     }
+
     return (
             <div className="contactform--container" ref={ref}>
                 <h1 className="h1--center">LET'S WORK TOGETHER</h1>
+                <h3><a className="mailto" href="mailto:josefjakobus@gmail.com">Or CLICK HERE to email me directly</a></h3>
                 <form className="contactform" onSubmit={handleSubmit} action="https://formbold.com/s/6rKPD" method="POST">
           
 
