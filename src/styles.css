@@ -346,6 +346,7 @@ background-color: var(--main-background-color);
 .footer--text {
 
 text-align: center;
+padding-bottom: 2em;
 
 }
 
