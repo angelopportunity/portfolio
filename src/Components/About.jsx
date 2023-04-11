@@ -8,7 +8,7 @@ const About = React.forwardRef((props, ref) => {
                     Hey! My name is 
                     <h1>MICHAEL SMITH</h1>
                     <p>I'm a front-end developer with design and marketing background. I used to make and sell books, but I've fallen in love with coding.</p>
-                    <button className="about--button">CONTACT ME</button>
+                    <a href="mailto:josefjakobus@gmail.com" class="about--button">CONTACT ME</a>
                 </div>
                 <div className="about--image--container">
                     <img className="pixelart" src="pixelart.png" alt="Pixel Art"></img>

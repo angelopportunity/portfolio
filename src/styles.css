@@ -573,6 +573,10 @@ h1 {
   background-color: var(--main-background-color);
 }
 
+.about--container > p {
+  margin-bottom: 3em;
+}
+
 .about--button,
 .about--button--spaced {
 color: var(--main-border-color);
@@ -581,11 +585,14 @@ font-family: 'Maison Neue', sans-serif;
 background-color: transparent;
 border: 0.08em solid black;
 padding: 1.15em;
+text-decoration: none;
 }
 
 .about--button--spaced {
 margin-left: var(--main-margin);
 }
+
+
 
 .pixelart {
 image-rendering: pixelated;
