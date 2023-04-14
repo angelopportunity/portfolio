@@ -4,6 +4,7 @@ import About from './Components/About';
 import Portfolio from './Components/Portfolio';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
+import PortfolioContainer from './Components/PortfolioContainer';
 import { useInView } from 'react-intersection-observer';
 
 const TriggerComponent = ({ onInView }) => {
@@ -16,7 +17,7 @@ const TriggerComponent = ({ onInView }) => {
   }, [inView, onInView]);
 
   return (
-    <div ref={ref}></div>
+    <div></div>
   );
 };
 
@@ -42,7 +43,11 @@ const App = () => {
     }
   };
 
-  const scrollToPortfolio = () => scrollTo(portfolioRef, setShowPortfolio);
+  const scrollToPortfolio = () => {
+    setTimeout(() => {
+      scrollTo(portfolioRef, setShowPortfolio);
+    }, 500);
+  };
   const scrollToContact = () => scrollTo(contactRef, setShowContact);
   const scrollToAbout = () => scrollTo(aboutRef)
 
@@ -54,7 +59,7 @@ const App = () => {
     <div>
       <Header onPortfolioButtonClick={scrollToPortfolio} onContactButtonClick={scrollToContact} onAboutButtonClick={scrollToAbout} />
       <About ref={aboutRef} />
-      {showPortfolio && <Portfolio ref={portfolioRef} />}
+      {showPortfolio && <PortfolioContainer ref={portfolioRef} />}
       <TriggerComponent onInView={() => handleTriggerInView(setShowPortfolio)} />
       {showContact && <Contact ref={contactRef} />}
       <TriggerComponent onInView={() => handleTriggerInView(setShowContact)} />
