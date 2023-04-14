@@ -7,8 +7,23 @@ import Footer from './Components/Footer';
 import PortfolioContainer from './Components/PortfolioContainer';
 import { useInView } from 'react-intersection-observer';
 
+const isMobileDevice = () => {
+  return (
+    typeof window.orientation !== "undefined" ||
+    navigator.userAgent.indexOf("IEMobile") !== -1
+  );
+};
+
 const TriggerComponent = ({ onInView }) => {
-  const { ref, inView } = useInView({ threshold: 0 });
+  const mobileRootMargin = "0px 0px -50px 0px";
+  const desktopRootMargin = "0px 0px -100px 0px";
+  const rootMargin = isMobileDevice() ? mobileRootMargin : desktopRootMargin;
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+    rootMargin: rootMargin,
+  });
 
   useEffect(() => {
     if (inView) {
@@ -16,9 +31,7 @@ const TriggerComponent = ({ onInView }) => {
     }
   }, [inView, onInView]);
 
-  return (
-    <div></div>
-  );
+  return <div ref={ref}></div>;
 };
 
 const App = () => {
@@ -31,15 +44,13 @@ const App = () => {
   const aboutRef = useRef(null);
 
   const scrollTo = (ref, setShowState) => {
-    if (!ref.current) {
-      setShowState(true);
-    }
-
     if (ref.current) {
       const headerHeight = 150;
       const yOffset = -headerHeight;
       const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      setShowState(true);
     }
   };
 
