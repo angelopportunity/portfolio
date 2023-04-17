@@ -12,7 +12,8 @@ const MobilePortfolio = React.forwardRef((props, ref) =>
           <div className="card--copy--mobile" dangerouslySetInnerHTML={{__html: project.copy}}>
           </div>
           <div className="sketch--container--mobile">
-            <img className="pic--mobile" src={project.pic}></img>
+           <a href={project.url} target="_blank" rel="noopener noreferrer">
+            <img className="pic--mobile" src={project.pic}></img></a>
             <div className="pic--caption--mobile" dangerouslySetInnerHTML={{__html: project.caption}}>
             </div>
             <div className="type--mobile">{project.type}</div>

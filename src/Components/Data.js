@@ -11,7 +11,8 @@ export default [
         caption: `
         <p>If you watch the ships over several generations, you'll notice they tend to move less. The first generation of ships often careen full thrust into the walls, while the 20th generation usually shows ships which barely move. Natural selection selects for ships that have fewer thrust genes.</p>
         `,
-        type:"JAVASCRIPT, P5JS, SIMULATED EVOLUTION"
+        type:"JAVASCRIPT, P5JS, SIMULATED EVOLUTION",
+        url:"https://editor.p5js.org/angelopportunity/full/TwyiExUv4"
     },
 
     {
@@ -24,6 +25,7 @@ export default [
       <p>This three-part tutorial series is what I wish I would have had when I had first started learning. I approach the concept of variables, functions, etc. with the idea that the viewer has zero experience at all. When I first started learning, most tutorials would make incorrect assumptions about what I knew or what was intuitive to a beginner.</p>
       `,
       type: "LUA, LOVE2D, GAMEDEV",
+      url: "https://www.youtube.com/channel/UCZlelTqKzvt2sWq5YniXfJA"
     },
 
     {
@@ -36,6 +38,7 @@ export default [
       caption: `
       <p>This site was made with React. It uses a database for the portfolio and the store. I found this important so that I can easily just type some information into the database and throw the .png file into the images folder when I finish a new cover. The site then renders in the new cover onto a card prop.</p>
       `,
-      type: "REACT, CSS, HTML, DESIGN"
+      type: "REACT, CSS, HTML, DESIGN",
+      url: "https://darkstardesign.netlify.app/"
     },
 ]
