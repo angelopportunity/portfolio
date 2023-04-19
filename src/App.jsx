@@ -21,7 +21,7 @@ const TriggerComponent = ({ onInView }) => {
 
   const { ref, inView } = useInView({
     threshold: 0,
-    triggerOnce: true,
+    triggerOnce: false,
     rootMargin: rootMargin,
   });
 

@@ -67,9 +67,6 @@ const Portfolio = React.forwardRef((props, ref) => {
 </div>
 </div>
 </div>
-
-
-
   )
 })
 
