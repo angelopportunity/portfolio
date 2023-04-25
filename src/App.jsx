@@ -43,14 +43,12 @@ const App = () => {
 
   const aboutRef = useRef(null);
 
-  const scrollTo = (ref, setShowState) => {
+  const scrollTo = (ref) => {
     if (ref.current) {
       const headerHeight = 150;
       const yOffset = -headerHeight;
       const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
-    } else {
-      setShowState(true);
     }
   };
 
@@ -70,8 +68,8 @@ const App = () => {
     <div>
       <Header onPortfolioButtonClick={scrollToPortfolio} onContactButtonClick={scrollToContact} onAboutButtonClick={scrollToAbout} />
       <About ref={aboutRef} />
-       <PortfolioContainer/>
-      <Contact/>
+      <PortfolioContainer ref={portfolioRef} />
+      <Contact ref={contactRef} />
       <Footer />
     </div>
   );
