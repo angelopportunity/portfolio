@@ -16,7 +16,7 @@ const isMobileDevice = () => {
 
 const TriggerComponent = ({ onInView }) => {
   const mobileRootMargin = "0px 0px -50px 0px";
-  const desktopRootMargin = "0px 0px -100px 0px";
+  const desktopRootMargin = "-100px 0px -100px 0px";
   const rootMargin = isMobileDevice() ? mobileRootMargin : desktopRootMargin;
 
   const { ref, inView } = useInView({
@@ -70,10 +70,8 @@ const App = () => {
     <div>
       <Header onPortfolioButtonClick={scrollToPortfolio} onContactButtonClick={scrollToContact} onAboutButtonClick={scrollToAbout} />
       <About ref={aboutRef} />
-      {showPortfolio && <PortfolioContainer ref={portfolioRef} />}
-      <TriggerComponent onInView={() => handleTriggerInView(setShowPortfolio)} />
-      {showContact && <Contact ref={contactRef} />}
-      <TriggerComponent onInView={() => handleTriggerInView(setShowContact)} />
+       <PortfolioContainer/>
+      <Contact/>
       <Footer />
     </div>
   );
